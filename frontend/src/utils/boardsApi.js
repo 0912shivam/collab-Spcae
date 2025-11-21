@@ -3,12 +3,12 @@ import fetchWithAuth from './api';
 export const boardsAPI = {
   // Get all user boards
   getBoards: async () => {
-    return await fetchWithAuth('/boards');
+    return await fetchWithAuth('/api/boards');
   },
 
   // Create new board
   createBoard: async (boardData) => {
-    return await fetchWithAuth('/boards', {
+    return await fetchWithAuth('/api/boards', {
       method: 'POST',
       body: JSON.stringify(boardData),
     });
@@ -16,12 +16,12 @@ export const boardsAPI = {
 
   // Get single board
   getBoard: async (boardId) => {
-    return await fetchWithAuth(`/boards/${boardId}`);
+    return await fetchWithAuth(`/api/boards/${boardId}`);
   },
 
   // Update board
   updateBoard: async (boardId, boardData) => {
-    return await fetchWithAuth(`/boards/${boardId}`, {
+    return await fetchWithAuth(`/api/boards/${boardId}`, {
       method: 'PUT',
       body: JSON.stringify(boardData),
     });
@@ -29,14 +29,14 @@ export const boardsAPI = {
 
   // Delete board
   deleteBoard: async (boardId) => {
-    return await fetchWithAuth(`/boards/${boardId}`, {
+    return await fetchWithAuth(`/api/boards/${boardId}`, {
       method: 'DELETE',
     });
   },
 
   // Invite user to board
   inviteUser: async (boardId, email) => {
-    return await fetchWithAuth(`/boards/${boardId}/invite`, {
+    return await fetchWithAuth(`/api/boards/${boardId}/invite`, {
       method: 'POST',
       body: JSON.stringify({ email }),
     });
@@ -46,12 +46,12 @@ export const boardsAPI = {
 export const listsAPI = {
   // Get all lists for a board
   getBoardLists: async (boardId) => {
-    return await fetchWithAuth(`/lists/board/${boardId}`);
+    return await fetchWithAuth(`/api/lists/board/${boardId}`);
   },
 
   // Create new list
   createList: async (listData) => {
-    return await fetchWithAuth('/lists', {
+    return await fetchWithAuth('/api/lists', {
       method: 'POST',
       body: JSON.stringify(listData),
     });
@@ -59,7 +59,7 @@ export const listsAPI = {
 
   // Update list
   updateList: async (listId, listData) => {
-    return await fetchWithAuth(`/lists/${listId}`, {
+    return await fetchWithAuth(`/api/lists/${listId}`, {
       method: 'PUT',
       body: JSON.stringify(listData),
     });
@@ -67,7 +67,7 @@ export const listsAPI = {
 
   // Delete list
   deleteList: async (listId) => {
-    return await fetchWithAuth(`/lists/${listId}`, {
+    return await fetchWithAuth(`/api/lists/${listId}`, {
       method: 'DELETE',
     });
   },
@@ -76,17 +76,17 @@ export const listsAPI = {
 export const cardsAPI = {
   // Get all cards for a list
   getListCards: async (listId) => {
-    return await fetchWithAuth(`/cards/list/${listId}`);
+    return await fetchWithAuth(`/api/cards/list/${listId}`);
   },
 
   // Get all cards for a board
   getBoardCards: async (boardId) => {
-    return await fetchWithAuth(`/cards/board/${boardId}`);
+    return await fetchWithAuth(`/api/cards/board/${boardId}`);
   },
 
   // Create new card
   createCard: async (cardData) => {
-    return await fetchWithAuth('/cards', {
+    return await fetchWithAuth('/api/cards', {
       method: 'POST',
       body: JSON.stringify(cardData),
     });
@@ -94,12 +94,12 @@ export const cardsAPI = {
 
   // Get single card
   getCard: async (cardId) => {
-    return await fetchWithAuth(`/cards/${cardId}`);
+    return await fetchWithAuth(`/api/cards/${cardId}`);
   },
 
   // Update card
   updateCard: async (cardId, cardData) => {
-    return await fetchWithAuth(`/cards/${cardId}`, {
+    return await fetchWithAuth(`/api/cards/${cardId}`, {
       method: 'PUT',
       body: JSON.stringify(cardData),
     });
@@ -107,14 +107,14 @@ export const cardsAPI = {
 
   // Delete card
   deleteCard: async (cardId) => {
-    return await fetchWithAuth(`/cards/${cardId}`, {
+    return await fetchWithAuth(`/api/cards/${cardId}`, {
       method: 'DELETE',
     });
   },
 
   // Move card
   moveCard: async (cardId, moveData) => {
-    return await fetchWithAuth(`/cards/${cardId}/move`, {
+    return await fetchWithAuth(`/api/cards/${cardId}/move`, {
       method: 'PUT',
       body: JSON.stringify(moveData),
     });
@@ -122,6 +122,6 @@ export const cardsAPI = {
 
   // Get card recommendations
   getRecommendations: async (boardId, cardId) => {
-    return await fetchWithAuth(`/cards/${cardId}/recommendations`);
+    return await fetchWithAuth(`/api/cards/${cardId}/recommendations`);
   },
 };

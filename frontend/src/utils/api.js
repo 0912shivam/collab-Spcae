@@ -73,7 +73,7 @@ export const fetchWithAuth = async (endpoint, options = {}) => {
 export const authAPI = {
   // Register new user
   register: async (userData) => {
-    const data = await fetchWithAuth('/auth/register', {
+    const data = await fetchWithAuth('/api/auth/register', {
       method: 'POST',
       body: JSON.stringify(userData),
     });
@@ -88,7 +88,7 @@ export const authAPI = {
 
   // Login user
   login: async (credentials) => {
-    const data = await fetchWithAuth('/auth/login', {
+    const data = await fetchWithAuth('/api/auth/login', {
       method: 'POST',
       body: JSON.stringify(credentials),
     });
@@ -103,7 +103,7 @@ export const authAPI = {
 
   // Get current user
   getMe: async () => {
-    return await fetchWithAuth('/auth/me');
+    return await fetchWithAuth('/api/auth/me');
   },
 
   // Logout user
