@@ -1,5 +1,5 @@
 // API configuration and utilities
-const API_URL = import.meta.env.VITE_API_URL || 'https://smart-board-backend-2.onrender.com/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://collab-space-2.onrender.com';
 
 // Get token from localStorage
 export const getToken = () => {
